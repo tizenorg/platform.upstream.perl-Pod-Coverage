@@ -28,13 +28,8 @@ Source:         http://www.cpan.org/authors/id/R/RC/RCLAMP/%{cpan_name}-%{versio
 BuildRequires:  perl
 BuildRequires:  perl(Devel::Symdump) >= 2.01
 BuildRequires:  perl-macros
-#BuildRequires: perl(GrandParent)
-#BuildRequires: perl(Parent)
-#BuildRequires: perl(Pod::Coverage)
 Requires:       perl(Devel::Symdump) >= 2.01
-BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildArch:      noarch
-%{perl_requires}
 
 %description
 Developers hate writing documentation. They'd hate it even more if their
@@ -81,6 +76,5 @@ make test
 
 %files -f %{name}.files
 %defattr(-,root,root,755)
-%doc Changes examples
 
 %changelog
