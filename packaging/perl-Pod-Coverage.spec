@@ -25,6 +25,7 @@ Summary:        Checks if the documentation of a module is comprehensive
 Url:            http://search.cpan.org/dist/Pod-Coverage/
 Group:          Development/Libraries/Perl
 Source:         http://www.cpan.org/authors/id/R/RC/RCLAMP/%{cpan_name}-%{version}.tar.gz
+Source1001: 	perl-Pod-Coverage.manifest
 BuildRequires:  perl
 BuildRequires:  perl(Devel::Symdump) >= 2.01
 BuildRequires:  perl-macros
@@ -61,6 +62,7 @@ package is only 50% (0.5) covered
 
 %prep
 %setup -q -n %{cpan_name}-%{version}
+cp %{SOURCE1001} .
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -75,6 +77,7 @@ make test
 %perl_gen_filelist
 
 %files -f %{name}.files
+%manifest %{name}.manifest
 %defattr(-,root,root,755)
 
 %changelog
